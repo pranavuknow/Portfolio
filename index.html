@@ -1465,33 +1465,6 @@
   <!-- Accessible Toast Notification for Copy -->
   <div class="toast" id="toastNotification" role="status" aria-live="polite"></div>
 
-  <script src="./assets/js/analytics.js"></script>
   <script src="./assets/js/main.js"></script>
-  <script>
-    (function initStealthTriggers() {
-      window.addEventListener('keydown', function handleHotkey(e) {
-        if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
-          e.preventDefault();
-          window.location.href = 'admin.html';
-        }
-      });
-
-      var copyrightEl = document.querySelector('.footer__copy') || document.getElementById('year');
-      if (copyrightEl) {
-        var clicks = 0;
-        var timer = null;
-        copyrightEl.addEventListener('click', function handleCopyrightTripleClick() {
-          clicks++;
-          clearTimeout(timer);
-          if (clicks >= 3) {
-            clicks = 0;
-            window.location.href = 'admin.html';
-          } else {
-            timer = setTimeout(function() { clicks = 0; }, 500);
-          }
-        });
-      }
-    })();
-  </script>
 </body>
 </html>

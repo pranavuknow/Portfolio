@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin.html
-Disallow: /control/
 Allow: /
 
 Sitemap: https://pranavshukla.in/sitemap.xml
