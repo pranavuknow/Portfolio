@@ -1,0 +1,123 @@
+/* ═══════════════════════════════════════════════════════════
+   WORK PAGE — Additional Styles & Project Archive Layout
+═══════════════════════════════════════════════════════════ */
+
+/* Work page hero */
+.work-page-hero {
+  padding: calc(64px + var(--space-12)) 0 var(--space-8);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.breadcrumb__link {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.breadcrumb__link:hover {
+  color: var(--accent-primary);
+}
+
+.breadcrumb__sep {
+  font-size: var(--text-xs);
+  color: var(--border-strong);
+}
+
+.breadcrumb__current {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.work-page-hero__title {
+  font-size: clamp(2.2rem, 4.5vw, var(--text-5xl));
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-2);
+}
+
+.work-page-hero__sub {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 540px;
+}
+
+/* Filters row on work page */
+.work__filters--page {
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-10);
+}
+
+/* Coming soon card style */
+.work__card--coming-soon {
+  opacity: 0.75;
+}
+
+.work__card--coming-soon .work__card-thumb {
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work__card--coming-soon .work__card-thumb svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-tertiary);
+}
+
+/* Work page CTA section */
+.work-page-cta {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-20) 0;
+}
+
+.work-page-cta__inner {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.work-page-cta__title {
+  font-size: clamp(var(--text-3xl), 3.5vw, var(--text-4xl));
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--space-3);
+}
+
+.work-page-cta__sub {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.work-page-cta__actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .work-page-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

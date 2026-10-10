@@ -1,0 +1,18 @@
+{
+  "name": "Pranav Shukla — Video Editor & Designer",
+  "short_name": "Pranav Shukla",
+  "description": "Video editing, sound architecture, and high-retention storytelling for YouTube creators, brands, and podcasts.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0c10",
+  "theme_color": "#0b0c10",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
