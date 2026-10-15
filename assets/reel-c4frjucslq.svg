@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none" aria-label="Short-form retention reel edit preview">
+  <rect width="400" height="225" fill="#14111d"/>
+  <rect x="145" y="16" width="110" height="193" rx="8" stroke="rgba(229,169,60,0.3)" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <rect x="153" y="24" width="94" height="177" rx="6" fill="#1d1628" stroke="rgba(255,255,255,0.08)"/>
+  <path d="M165 112h6m4-12v24m6-18v36m6-28v20m6-32v44m6-24v16m6-36v40m6-20v12m6-8v4" stroke="#e5a93c" stroke-width="2" stroke-linecap="round"/>
+  <rect x="160" y="32" width="80" height="16" rx="3" fill="rgba(0,0,0,0.6)"/>
+  <text x="200" y="43" fill="#e5a93c" font-size="8" font-family="monospace" text-anchor="middle" font-weight="600">00:00:15:00</text>
+  <rect x="160" y="168" width="80" height="18" rx="4" fill="rgba(229,169,60,0.15)" stroke="rgba(229,169,60,0.3)"/>
+  <text x="200" y="180" fill="#f3f4f6" font-size="8" font-family="sans-serif" text-anchor="middle" font-weight="600">HOOK RETENTION</text>
+</svg>

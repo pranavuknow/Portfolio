@@ -540,7 +540,7 @@ const ContactForm = (() => {
     const { sLabel, bLabel } = getHumanLabels();
 
     const subject = `Project Inquiry: ${sLabel} — ${name}`;
-    const body = `Hi Pranav,\n\nName: ${name}\nEmail: ${email}\nService: ${sLabel}\nBudget Range: ${bLabel}\nFootage / Channel Link: ${footage}\n\nProject Details:\n${message}\n\n---\nSent via pranavshukla.in`;
+    const body = `Hi Pranav,\n\nName: ${name}\nEmail: ${email}\nService: ${sLabel}\nBudget Range: ${bLabel}\nFootage / Channel Link: ${footage}\n\nProject Details:\n${message}\n\n---\nSent via pranavuknow.github.io/Portfolio`;
 
     const mailtoUrl = `mailto:pranav.uknow@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=pranav.uknow@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

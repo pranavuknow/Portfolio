@@ -3,4 +3,4 @@ Disallow: /admin.html
 Disallow: /control/
 Allow: /
 
-Sitemap: https://pranavshukla.in/sitemap.xml
+Sitemap: https://pranavuknow.github.io/Portfolio/sitemap.xml

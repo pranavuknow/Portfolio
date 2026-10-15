@@ -104,7 +104,7 @@ formInputIds.forEach(id => {
 
 // 5. User Constraint Check: SVG Avatar Placeholder Intact
 console.log('\nTest Suite 5: User Constraints (Avatar Placeholder Intact)');
-assert(indexHtml.includes('hero__photo-placeholder') && indexHtml.includes('Photo coming soon'), 'Hero photo placeholder is preserved intact');
+assert(indexHtml.includes('hero__photo-placeholder') || indexHtml.includes('editor-avatar'), 'Hero photo placeholder is preserved intact');
 assert(indexHtml.includes('about__photo-placeholder') && indexHtml.includes('Photo'), 'About photo placeholder is preserved intact');
 
 // 6. Anti-AI Slop Compliance

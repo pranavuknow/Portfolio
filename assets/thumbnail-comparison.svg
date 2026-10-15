@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none" aria-label="Before and after high-CTR thumbnail packaging comparison">
+  <!-- Background -->
+  <rect width="400" height="225" fill="#0b0c10"/>
+  
+  <!-- Left Side: Raw Frame (Dull / Ungraded) -->
+  <g id="before-side">
+    <rect x="12" y="12" width="184" height="201" rx="6" fill="#14161d" stroke="rgba(255,255,255,0.06)"/>
+    <!-- Wireframe subject -->
+    <circle cx="104" cy="85" r="32" fill="#1e222e" stroke="rgba(255,255,255,0.1)"/>
+    <path d="M60 170c0-24 20-38 44-38s44 14 44 38" fill="#1a1d28"/>
+    <!-- Label -->
+    <rect x="24" y="22" width="70" height="18" rx="3" fill="rgba(0,0,0,0.6)"/>
+    <text x="59" y="34" fill="#6b7280" font-size="8.5" font-family="system-ui, sans-serif" text-anchor="middle" font-weight="600">RAW FRAME</text>
+    <text x="104" y="195" fill="#4b5563" font-size="8" font-family="monospace" text-anchor="middle">Flat Contrast · No Focus</text>
+  </g>
+
+  <!-- Right Side: Edited & Packaged (High-CTR / Rec.709) -->
+  <g id="after-side">
+    <rect x="204" y="12" width="184" height="201" rx="6" fill="#181410" stroke="rgba(229,169,60,0.2)"/>
+    <!-- Subject with vibrant lighting & depth separation -->
+    <circle cx="296" cy="85" r="32" fill="#2d2214" stroke="#e5a93c" stroke-width="1.5"/>
+    <circle cx="296" cy="85" r="28" fill="#3a2b16"/>
+    <path d="M252 170c0-24 20-38 44-38s44 14 44 38" fill="#2a1f12" stroke="rgba(229,169,60,0.3)"/>
+    <!-- Bold CTR Expression lines -->
+    <path d="M284 80q12-6 24 0" stroke="#f3f4f6" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="288" cy="86" r="2.5" fill="#f3f4f6"/>
+    <circle cx="304" cy="86" r="2.5" fill="#f3f4f6"/>
+    <!-- High contrast focal badges -->
+    <rect x="216" y="22" width="82" height="18" rx="3" fill="#e5a93c"/>
+    <text x="257" y="34" fill="#0b0c10" font-size="8.5" font-family="system-ui, sans-serif" text-anchor="middle" font-weight="700">HIGH-CTR CUT</text>
+    <!-- Hook text element -->
+    <rect x="272" y="125" width="102" height="24" rx="4" fill="#0b0c10" stroke="#e5a93c" stroke-width="1.2"/>
+    <text x="323" y="141" fill="#f3f4f6" font-size="10" font-family="system-ui, sans-serif" text-anchor="middle" font-weight="800">HOOK 84%</text>
+    <text x="296" y="195" fill="#e5a93c" font-size="8" font-family="monospace" text-anchor="middle">Rec.709 · 120px Legible</text>
+  </g>
+
+  <!-- Center Splitter & Badge -->
+  <line x1="200" y1="12" x2="200" y2="213" stroke="#e5a93c" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="180" y="98" width="40" height="20" rx="10" fill="#0b0c10" stroke="#e5a93c" stroke-width="1.5"/>
+  <text x="200" y="111" fill="#e5a93c" font-size="7.5" font-family="system-ui, sans-serif" text-anchor="middle" font-weight="700">VS</text>
+</svg>
