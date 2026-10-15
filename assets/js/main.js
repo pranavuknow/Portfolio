@@ -894,10 +894,10 @@ const HeroSimulator = (() => {
   let isPlaying = false;
   let playAnimId = null;
   const markers = [
-    { pos: 0, tag: '0:00 Hook', desc: 'Visual plunge & pattern break anchor viewer in first 3s.' },
-    { pos: 25, tag: '0:15 Interrupt', desc: 'Dynamic B-roll zoom & sound riser resets dopamine loop.' },
-    { pos: 55, tag: '0:32 Sound Riser', desc: 'Multi-layer foley & music riser accelerates emotional momentum.' },
-    { pos: 85, tag: '0:50 Climax', desc: 'Narrative resolution delivers maximum viewer completion.' }
+    { pos: 0, tag: '0:00 The Hook', desc: 'Visual match-cut & opening hook; cut the first 15s of throat-clearing.' },
+    { pos: 25, tag: '0:15 Pattern Shift', desc: 'Punch-in reframe, kinetic B-roll, and SFX riser to re-engage visual focus.' },
+    { pos: 55, tag: '0:32 Audio Riser', desc: '48kHz dialogue EQ with subtle tactile whooshes and -18dB music auto-ducking.' },
+    { pos: 85, tag: '0:50 Payoff & Loop', desc: 'Clean narrative payoff with seamless loop transition back to the hook.' }
   ];
 
   function getMarkerForPosition(val) {
@@ -941,11 +941,30 @@ const HeroSimulator = (() => {
 
     if (btnRet) { btnRet.classList.toggle('hero__sim-btn--active', isRet); btnRet.setAttribute('aria-pressed', String(isRet)); }
     if (btnAmat) { btnAmat.classList.toggle('hero__sim-btn--active', !isRet); btnAmat.setAttribute('aria-pressed', String(!isRet)); }
-    if (metric) { metric.textContent = isRet ? '84%' : '31%'; metric.style.color = isRet ? 'var(--accent-primary)' : '#ef4444'; }
-    if (label) label.textContent = isRet ? 'Viewer Retention at 60s' : 'Viewer Retention at 60s (Drop-off)';
+    if (metric) { metric.textContent = isRet ? 'Paced Cut' : 'Raw Clip'; metric.style.color = isRet ? 'var(--accent-primary)' : '#9ca3af'; }
+    if (label) label.textContent = isRet ? '48kHz Audio · J/L Cuts' : 'Uncut Audio · Static Frame';
     if (cRet) cRet.style.opacity = isRet ? '1' : '0.2';
     if (cRetArea) cRetArea.style.opacity = isRet ? '1' : '0';
     if (cAmat) cAmat.style.opacity = isRet ? '0.25' : '1';
+  }
+
+  function switchView(view) {
+    const showreelStage = document.getElementById('heroShowreelStage');
+    const simStage = document.getElementById('heroSimStage');
+    const tabShowreel = document.getElementById('tabModeShowreel');
+    const tabTimeline = document.getElementById('tabModeTimeline');
+    const isShowreel = view === 'showreel';
+
+    if (showreelStage) showreelStage.hidden = !isShowreel;
+    if (simStage) simStage.hidden = isShowreel;
+    if (tabShowreel) {
+      tabShowreel.classList.toggle('hero__tab-btn--active', isShowreel);
+      tabShowreel.setAttribute('aria-selected', String(isShowreel));
+    }
+    if (tabTimeline) {
+      tabTimeline.classList.toggle('hero__tab-btn--active', !isShowreel);
+      tabTimeline.setAttribute('aria-selected', String(!isShowreel));
+    }
   }
 
   function stepAnimation() {
@@ -978,9 +997,13 @@ const HeroSimulator = (() => {
     const btnAmat = document.getElementById('btnAmateurCut');
     const slider = document.getElementById('heroScrubberRange');
     const playBtn = document.getElementById('heroSimPlayBtn');
+    const tabShowreel = document.getElementById('tabModeShowreel');
+    const tabTimeline = document.getElementById('tabModeTimeline');
 
     if (btnRet) btnRet.addEventListener('click', () => setMode('retention'));
     if (btnAmat) btnAmat.addEventListener('click', () => setMode('amateur'));
+    if (tabShowreel) tabShowreel.addEventListener('click', () => switchView('showreel'));
+    if (tabTimeline) tabTimeline.addEventListener('click', () => switchView('timeline'));
     if (slider) slider.addEventListener('input', (e) => {
       if (isPlaying) togglePlay();
       updateScrubberUI(parseFloat(e.target.value));
@@ -989,7 +1012,7 @@ const HeroSimulator = (() => {
     updateScrubberUI(25);
   }
 
-  return { init, setMode, updateScrubberUI };
+  return { init, setMode, updateScrubberUI, switchView };
 })();
 
 /* ────────────────────────────────────────────────────────────

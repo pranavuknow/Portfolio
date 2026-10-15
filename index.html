@@ -191,7 +191,7 @@
 
         <div class="hero__visual fade-in-up">
           <div class="hero__studio">
-            <!-- Studio Header: Real Profile Header & Status -->
+            <!-- Studio Header: Creator Badge & Dual Mode Switcher -->
             <div class="hero__studio-header">
               <div class="hero__creator-badge">
                 <div class="hero__photo-wrap">
@@ -208,14 +208,18 @@
                   <span class="hero__creator-role">Video Editor · Premiere Pro &amp; After Effects</span>
                 </div>
               </div>
-              <div class="hero__studio-mode-pill">
-                <span class="hero__live-dot" aria-hidden="true"></span>
-                <span>Featured Showreel</span>
+              <div class="hero__studio-tabs" role="tablist" aria-label="Studio display modes">
+                <button type="button" class="hero__tab-btn hero__tab-btn--active" id="tabModeShowreel" role="tab" aria-selected="true" aria-controls="heroShowreelStage">
+                  Showreel
+                </button>
+                <button type="button" class="hero__tab-btn" id="tabModeTimeline" role="tab" aria-selected="false" aria-controls="heroSimStage">
+                  Timeline
+                </button>
               </div>
             </div>
 
-            <!-- Real Embedded Showreel Video -->
-            <div class="hero__video-stage" style="padding: 12px; background: var(--bg-base);">
+            <!-- View 1: Real Showreel Video -->
+            <div class="hero__video-stage" id="heroShowreelStage" style="padding: 12px; background: var(--bg-base);">
               <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-subtle); background: #000;">
                 <iframe
                   src="https://www.youtube-nocookie.com/embed/BQMk8Tz2mvw?rel=0&amp;modestbranding=1"
@@ -225,6 +229,112 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen>
                 </iframe>
+              </div>
+            </div>
+
+            <!-- View 2: Interactive Timeline Workbench (Human NLE Inspector) -->
+            <div class="hero__sim-stage" id="heroSimStage" hidden>
+              <!-- Timeline Toolbar -->
+              <div class="hero__sim-toolbar">
+                <div class="hero__sim-title-group">
+                  <span class="hero__sim-kicker">Interactive Timeline Workbench</span>
+                  <span class="hero__sim-caption">Scrub through real pacing and cut decisions</span>
+                </div>
+                <div class="hero__sim-toggle" role="group" aria-label="Cut Strategy">
+                  <button type="button" class="hero__sim-btn hero__sim-btn--active" id="btnRetentionCut" data-mode="retention" aria-pressed="true">
+                    Paced Cut
+                  </button>
+                  <button type="button" class="hero__sim-btn" id="btnAmateurCut" data-mode="amateur" aria-pressed="false">
+                    Raw Clip
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Timeline Canvas (Audio Waveform & Playhead) -->
+              <div class="hero__timeline-canvas">
+                <div class="hero__retention-metric">
+                  <span class="hero__metric-number" id="heroSimMetric">Paced Cut</span>
+                  <span class="hero__metric-label" id="heroSimLabel">48kHz Audio · J/L Cuts</span>
+                </div>
+
+                <svg class="hero__timeline-svg" viewBox="0 0 400 155" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="heroRetGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#e5a93c"/>
+                      <stop offset="50%" stop-color="#f59e0b"/>
+                      <stop offset="100%" stop-color="#e5a93c"/>
+                    </linearGradient>
+                    <linearGradient id="heroRetArea" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#e5a93c" stop-opacity="0.32"/>
+                      <stop offset="100%" stop-color="#e5a93c" stop-opacity="0.0"/>
+                    </linearGradient>
+                    <linearGradient id="heroAmatGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#ef4444"/>
+                      <stop offset="100%" stop-color="#71717a"/>
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Horizontal Guide Lines -->
+                  <line x1="0" y1="35" x2="400" y2="35" class="hero__svg-guide" stroke-dasharray="2 3"/>
+                  <line x1="0" y1="75" x2="400" y2="75" class="hero__svg-guide" stroke-dasharray="2 3"/>
+                  <line x1="0" y1="115" x2="400" y2="115" class="hero__svg-guide" stroke-dasharray="2 3"/>
+
+                  <!-- Multi-Channel Audio Waveform Track -->
+                  <g class="hero__waveform-bars" id="heroWaveformBars">
+                    <line x1="10" y1="148" x2="10" y2="128" stroke-width="2"/>
+                    <line x1="26" y1="148" x2="26" y2="115" stroke-width="2"/>
+                    <line x1="42" y1="148" x2="42" y2="132" stroke-width="2"/>
+                    <line x1="58" y1="148" x2="58" y2="140" stroke-width="2"/>
+                    <line x1="74" y1="148" x2="74" y2="122" stroke-width="2"/>
+                    <line x1="90" y1="148" x2="90" y2="124" stroke-width="2"/>
+                    <line x1="106" y1="148" x2="106" y2="118" stroke-width="2"/>
+                    <line x1="122" y1="148" x2="122" y2="138" stroke-width="2"/>
+                    <line x1="138" y1="148" x2="138" y2="126" stroke-width="2"/>
+                    <line x1="154" y1="148" x2="154" y2="122" stroke-width="2"/>
+                    <line x1="170" y1="148" x2="170" y2="136" stroke-width="2"/>
+                    <line x1="186" y1="148" x2="186" y2="114" stroke-width="2"/>
+                    <line x1="202" y1="148" x2="202" y2="116" stroke-width="2"/>
+                    <line x1="218" y1="148" x2="218" y2="132" stroke-width="2"/>
+                    <line x1="234" y1="148" x2="234" y2="114" stroke-width="2"/>
+                    <line x1="250" y1="148" x2="250" y2="126" stroke-width="2"/>
+                    <line x1="266" y1="148" x2="266" y2="120" stroke-width="2"/>
+                    <line x1="282" y1="148" x2="282" y2="108" stroke-width="2"/>
+                    <line x1="298" y1="148" x2="298" y2="122" stroke-width="2"/>
+                    <line x1="314" y1="148" x2="314" y2="116" stroke-width="2"/>
+                    <line x1="330" y1="148" x2="330" y2="104" stroke-width="2"/>
+                    <line x1="346" y1="148" x2="346" y2="118" stroke-width="2"/>
+                    <line x1="362" y1="148" x2="362" y2="112" stroke-width="2"/>
+                    <line x1="378" y1="148" x2="378" y2="124" stroke-width="2"/>
+                    <line x1="394" y1="148" x2="394" y2="132" stroke-width="2"/>
+                  </g>
+
+                  <!-- Curves -->
+                  <path id="curveRetentionArea" fill="url(#heroRetArea)" d="M0,45 Q70,48 140,56 T280,68 T400,75 L400,155 L0,155 Z"/>
+                  <path id="curveRetention" fill="none" stroke="url(#heroRetGrad)" stroke-width="3" stroke-linecap="round" d="M0,45 Q70,48 140,56 T280,68 T400,75"/>
+                  <path id="curveAmateur" fill="none" stroke="url(#heroAmatGrad)" stroke-width="2.5" stroke-dasharray="4 4" d="M0,50 Q60,95 120,120 T240,135 T400,145" style="opacity: 0.25;"/>
+
+                  <!-- Scrub Playhead -->
+                  <line id="heroPlayhead" x1="25%" y1="15" x2="25%" y2="155" stroke="#f3f4f6" stroke-width="2" stroke-dasharray="1 0"/>
+                </svg>
+              </div>
+
+              <!-- Scrubber Controls -->
+              <div class="hero__scrubber-controls">
+                <button type="button" class="hero__play-btn" id="heroSimPlayBtn" aria-label="Play timeline animation">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                  </svg>
+                </button>
+                <div class="hero__scrub-track-wrap">
+                  <input type="range" min="0" max="100" value="25" class="hero__scrubber-slider" id="heroScrubberRange" aria-label="Timeline scrubber position">
+                </div>
+                <div class="hero__timecode-pill" id="heroTimecode">00:15.00</div>
+              </div>
+
+              <!-- Marker Detail Readout -->
+              <div class="hero__marker-readout" id="heroMarkerDetail">
+                <span class="hero__readout-tag">0:15 Pattern Shift</span>
+                <span class="hero__readout-desc">Punch-in reframe, kinetic B-roll, and SFX riser to re-engage visual focus.</span>
               </div>
             </div>
 
